@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cuenta regresiva</title>
+</head>
+<style type="text/css">
+	.volver {
+    	position: absolute;
+    	left: 1%;
+    	top: -10%;
+    	font-size: 450%;
+    	font-family: 'Cooper Black';
+    	text-decoration: none;
+    	color: black;
+    	z-index: 2;
+    }
+	.fondo1{
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		height: 100%;
+		width: 100%;
+		background-color: rgb(255,242,0);
+		z-index: 1;
+	}
+	.fondo2{
+		position: absolute;
+		top: 50%;
+		left: 0%;
+		height: 50%;
+		width: 100%;
+		background-color: rgb(153,217,234);
+		z-index: 1;
+	}
+	.cuadro{
+		position: absolute;
+		top: 40%;
+		left: 30%;
+		height: 20%;
+        width: 40%;
+        background-color: rgb(202,237,77);
+        text-align: center;
+        font-family: 'cooper black';
+        font-size: 450%;
+        font-color: black;
+        border-style: solid;
+        border-width: 20px;
+        z-index: 3;
+	}
+	.linea{
+		display: block;
+		background-color: black;
+		position: absolute;
+		top: 49%;
+		left: 10%;
+		height: 2%;
+		width: 80%;
+		border-style: solid;
+		z-index: 2;
+	}
+
+	.texto {
+		position: absolute;
+		top:0%;
+		left: 0%;
+		height: 100%;
+		width: 100%;
+		text-align: center;
+		font-size: 100%;
+		font-family: 'cooper black';
+	}
+</style>
+<script type="text/javascript">
+
+	
+	function inicio() {
+		setTimeout(paso,4000);
+	}
+
+	function paso() {
+		a=parseInt(10);
+		com=setInterval(cuenta,1000);
+	}
+
+	function cuenta() {
+     b = document.getElementById('text');
+     b.value = a;
+     a=a-1;
+     if (a==-1) {
+     	clearInterval(com);
+     }
+	}
+
+</script>
+<body onload="inicio()">
+
+	<div class="fondo1"></div>
+	<div class="fondo2"></div>
+	<div class="cuadro"><input type="text" name="numero" id="text" value="hola" class="texto"></div>
+	<div class="linea"></div>
+    <a href="" ><p class="volver">Volver</p></a>
+
+</body>
+</html>
